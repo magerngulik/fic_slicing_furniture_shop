@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 void main() async {
   await initialize();
 
-  Widget mainView = const DetailView();
+  Widget mainView = const BasicMainNavigationView();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,

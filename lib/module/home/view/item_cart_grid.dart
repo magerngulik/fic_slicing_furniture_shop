@@ -25,21 +25,47 @@ class Fugi_ItemCardGridState extends State<FugiItemCardGrid> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 145.8,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(
-                  "${widget.itemsProduct['photo']}",
+          Stack(
+            children: [
+              Container(
+                height: 145.8,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(
+                      "${widget.itemsProduct['photo']}",
+                    ),
+                    fit: BoxFit.fitWidth,
+                  ),
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(
+                      20.0,
+                    ),
+                  ),
                 ),
-                fit: BoxFit.fitWidth,
               ),
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(
-                  20.0,
+              Container(
+                height: 34.0,
+                width: 34.0,
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(
+                      10.0,
+                    ),
+                  ),
+                ),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.favorite_outline,
+                    color: Colors.red,
+                    size: 20.0,
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
           const SizedBox(
             height: 12.0,

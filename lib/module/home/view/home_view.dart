@@ -1,3 +1,4 @@
+import 'package:fhe_template/core.dart';
 import 'package:fhe_template/module/home/view/title_submenu_fugi.dart';
 import 'package:flutter/material.dart';
 import '../controller/home_controller.dart';
@@ -121,8 +122,17 @@ class HomeView extends StatefulWidget {
                   physics: const ScrollPhysics(),
                   itemBuilder: (BuildContext context, int index) {
                     var itemsProduct = products[index];
-                    return FugiItemCardGrid(
-                      itemsProduct: itemsProduct,
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const DetailView()),
+                        );
+                      },
+                      child: FugiItemCardGrid(
+                        itemsProduct: itemsProduct,
+                      ),
                     );
                   },
                 ),

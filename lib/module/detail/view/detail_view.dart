@@ -13,8 +13,13 @@ class DetailView extends StatefulWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        leading:
-            const Icon(Icons.arrow_back, size: 32.0, color: Color(0xFF4A4543)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back,
+              size: 24.0, color: Color(0xFF4A4543)),
+        ),
         centerTitle: true,
         title: Text(
           "Detail",
